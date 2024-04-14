@@ -1,30 +1,66 @@
 package BattleGame;
 
+import java.util.Scanner;
+
 public class MainClass {
 	public static void main(String[] args) {
 		
 		Base characters[] = new Base[5];
+		boolean gameNow = true; 
 		
-		characters[0] = new Character1("김선호");
-		characters[1] = new Character1("전상문");
-		characters[2] = new Character1("김태훈");
-		characters[3] = new Character1("김유경");
-		characters[4] = new Character1("조하준"); // 여기에 본인이 만든 캐릭터 넣어주면됩니다!!!
+		characters[0] = new Character1();
+		characters[1] = new Character2();
+		characters[2] = new Character3();
+		characters[3] = new Character4();
+		characters[4] = new Character5();
+		
+
+		System.out.println("포켓몬 게임을 시작하겠습니다.");
+		System.out.println("먼저 캐릭터 소개가 있겠습니다.");
+		
+		for(Base character: characters)
+			System.out.println(character.name);
+		
+		Scanner scan = new Scanner(System.in);
+
 		
 		
 		Game game = new Game(characters); // 게임
 		
-//		game.showCurrCharacter();
+		String next=""; 
+		while(gameNow) {
+			System.out.println("엔터키를 누르면 게임이 진행됩니다.");
+			next = scan.nextLine();
+			if(next.equals("skip")) {
+				System.out.println("몇번 스킵하시겠습니까?");
+				int skipCnt = scan.nextInt();
+				 scan.nextLine();
+				 
+				 if(game.play(skipCnt)) {
+						gameNow = false;
+						game.gameEnd();
+					}else {
+						game.showCurrGame();
+					}
+			}else {
+				if(game.play()) {
+					gameNow = false;
+					game.gameEnd();
+				}else {
+					game.showCurrGame();
+				}
+			}
 		
-		System.out.println("게임을 시작합니다.");
+			
+		}
 		
-		game.play();
-		game.showCurrGame();
-		game.play();
-		game.showCurrGame();
-		game.play();
-		game.showCurrGame();
-		game.play();
-		game.showCurrGame();
+		
 	}
 }
+/*
+-게임메뉴
+-선공
+-사망처리
+-승리/패배처리
+*/
+ 
