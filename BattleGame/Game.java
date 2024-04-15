@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
-
+/*
+ * 전상문
+ */
 public class Game {
 	
 	final int characterCnt = 5; //팀당 캐릭터 갯수

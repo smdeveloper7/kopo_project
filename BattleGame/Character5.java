@@ -6,8 +6,7 @@ public class Character5 extends Base {
 	int count = 0;
 
 	/*
-	 * 1.캐릭터의 이름은 한글로 세글자로 작성해주세요.(필수는 아님 하지만 글자수를 맞춰야함) 2.공격에 의해 체력이 닳게 할꺼면 꼭 체력이
-	 * 감소되게 작성해주세요. -처리
+		김선호
 	 */
 	public Character5() {
 		this.name = "파이리";

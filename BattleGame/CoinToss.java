@@ -2,7 +2,7 @@ package BattleGame;
 import java.util.Random;
 import java.util.Scanner;
 /*
- * 김태
+ * 김태훈
 */
 public class CoinToss {
 
