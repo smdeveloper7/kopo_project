@@ -3,6 +3,7 @@ package BattleGame;
 import java.util.Random;
 
 public class Character5 extends Base {
+	int count = 0;
 
 	/*
 	 * 1.캐릭터의 이름은 한글로 세글자로 작성해주세요.(필수는 아님 하지만 글자수를 맞춰야함) 2.공격에 의해 체력이 닳게 할꺼면 꼭 체력이
@@ -18,6 +19,11 @@ public class Character5 extends Base {
 
 	@Override
 	public void underAttack() {
+		if(count == 0) {
+			System.out.println("파이리가 나타났다!");
+			count++;
+			}
+		
 		System.out.println(this.name + " 공격당함");
 		Random random = new Random();
 
@@ -39,8 +45,12 @@ public class Character5 extends Base {
 			this.hp -= 25;
 		} else {
 			System.out.println("날씨가 따뜻하네요");
-			System.out.println(this.name + " 체력회복");
+			System.out.println(this.name + " 체력이 15 증가합니다");
 			this.hp += 15;
+		}
+		
+		if (this.hp < 0) {
+			this.hp = 0;
 		}
 	}
 }

@@ -3,7 +3,7 @@ package BattleGame;
 import java.util.Random;
 
 public class Character4 extends Base{
-	
+	int count = 0;	
 
 	/*
  		조하준
@@ -15,6 +15,11 @@ public class Character4 extends Base{
 	
 	@Override
 	public void underAttack() {
+		if(count == 0) {
+			System.out.println(this.name + "가 드디어 일어났다");
+			count++;
+			}
+		
 		System.out.println(this.name+"공격당함");
 		Random random = new Random();
 		int ranNum = random.nextInt(3)+1;
@@ -31,6 +36,10 @@ public class Character4 extends Base{
 			System.out.println("내상을 입어 피를 토합니다(체력 15 감소)");
 			this.hp -= 15;
 			break;
+		}
+		
+		if (this.hp < 0) {
+			this.hp = 0;
 		}
 	}
 }

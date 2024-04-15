@@ -3,6 +3,7 @@ package BattleGame;
 import java.util.Random;
 
 public class Character3 extends Base {
+	int count = 0;
 
 	/*
  		김태훈
@@ -16,6 +17,11 @@ public class Character3 extends Base {
 	
 	
 	public void underAttack() {
+		if(count == 0) {
+			System.out.println("판이 깔렸다 " + this.name + "이 돈냄새를 맡았다.");
+			count++;
+			}
+		
 		System.out.println(this.name+"공격당함");
 		Random random = new Random();
 		int attckNum = random.nextInt(99)+1;
@@ -43,6 +49,10 @@ public class Character3 extends Base {
 				this.hp +=luckyDice*3;
 				}
 			}
+		
+		if (this.hp < 0) {
+			this.hp = 0;
+		}
 			
 	}
 
